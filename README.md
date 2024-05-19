@@ -1,50 +1,64 @@
 ![kraken lambang](https://github.com/hendri2808/krakenbot_v5r03/assets/67959601/50d5a261-60e0-4348-ac06-10c984d549e7)
 
 # krakenbot_v5r03 (KBV5R3)
-Latar Belakang
-KrakenBot_V5R03 (KBV5R3) adalah bot perdagangan otomatis yang dikembangkan untuk memaksimalkan keuntungan harian dari perdagangan kripto di jaringan Binance Smart Chain (BSC). Bot ini dirancang untuk bekerja secara otomatis dan menghasilkan keuntungan harian sebesar 100%-200%, mengandalkan strategi arbitrase dan analisis pasar yang canggih.
+1. Introduction
+KrakenBot_V5R03 (KBV5R3) is a sophisticated cryptocurrency trading bot designed for high-frequency trading on the Binance Smart Chain (BSC). The bot was developed to maximize profit through automated trading strategies and arbitrage opportunities, utilizing PancakeSwap's liquidity.
 
-# Pembuat
-KBV5R3 dikembangkan oleh Hendri, yang juga dikenal sebagai bro Kraken. Dengan latar belakang yang kuat dalam analisis pasar dan pengembangan kontrak pintar, Hendri menciptakan KBV5R3 untuk membantu para pedagang kripto memaksimalkan keuntungan mereka dengan modal yang terbatas.
+2. Background
+KrakenBot_V5R03 was created by Hendri, also known as Bro Kraken. Faced with financial constraints, Hendri developed this bot to generate income from crypto trading with minimal initial capital. The bot is designed to operate autonomously and generate substantial profits within a short timeframe.
 
-# Kelebihan KBV5R3
-Otomatisasi Penuh: Setelah deploy, bot ini akan bekerja secara otomatis tanpa perlu intervensi manual.
-Keuntungan Harian: Menggunakan strategi arbitrase untuk menghasilkan keuntungan harian yang konsisten.
-Biaya Rendah: Beroperasi di jaringan BSC, yang dikenal dengan biaya transaksi yang rendah.
-Fitur Keamanan: Implementasi dari OpenZeppelin's ReentrancyGuard dan Ownable untuk memastikan keamanan kontrak.
+3. Key Features
+  a. Full Automation: Once deployed, the bot operates independently, executing trades based on predefined strategies.
+  b. High Profitability: Targeting a daily profit of 100%-200%.
+  c. Low Capital Requirement: Efficiently operates with low initial investment.
+  d. Robust Security: Includes reentrancy guards and ownership controls to ensure safe operations.
+  e. Custom Gas Settings: Allows for custom gas fee settings to optimize transaction costs.
 
-# Langkah-langkah Penggunaan
-1. Clone Repository
-git clone https://github.com/hendri2808/krakenbot_v5r03.git
-cd krakenbot_v5r03
+4. Usage Guide
+ Prerequisites
+ Node.js and npm installed.
+ MetaMask extension set up with your wallet.
+ Initial balance in BNB for deployment and transactions.
+ Steps to Deploy and Use KBV5R3
+ Clone the Repository
 
-2.  Kompile Kontrak
-Gunakan Remix IDE atau alat kompilasi lain yang mendukung Solidity 0.8.4 untuk mengkompile kontrak KBV5R3.
+  git clone https://github.com/hendri2808/krakenbot_v5r03.git
+  cd krakenbot_v5r03
+  Install Dependencies
 
-3.  Deploy Kontrak
-Deploy kontrak yang telah dikompilasi ke jaringan BSC atau testnet BSC menggunakan MetaMask atau alat deploy lainnya.
+  npm install
+  Compile the Contract
 
-4.  Mengatur Parameter
-Setelah kontrak dideploy, atur parameter berikut:
+Open Remix IDE (remix.ethereum.org)
+Load KBV5R3.sol from the cloned repository.
+Compile the contract using the Solidity compiler version 0.8.4.
+Deploy the Contract
 
-setEnableTrading(true);
-SetTradeBalanceETH(50); // Contoh penggunaan 50% dari saldo
-SetTradeBalancePERCENT(30000000000000000); // 0.03 BNB dalam Wei, ini adalah nilai minimum perdagangan
+Set the environment to "Injected Web3" to use MetaMask.
+Deploy the contract by clicking the "Deploy" button.
+Confirm the transaction in MetaMask.
+Set Up and Start Trading
 
-5.  Transfer Saldo ke Kontrak
-Gunakan fungsi transferToContract untuk mengirimkan saldo BNB ke kontrak dengan menentukan gas fee yang sesuai.
+Transfer Initial Funds
 
-6. Mulai Trading
-Mulai perdagangan dengan memanggil fungsi startTrading.
+  transferToContract(gasLimit: uint256)
+  Set an appropriate gas limit and the amount to transfer in the "Value" field in Remix.
+  Set Trading Parameters
 
-7. Pantau dan Optimalkan
-Pantau performa bot dan sesuaikan parameter seperti target keuntungan dan saldo perdagangan sesuai kebutuhan.
+  setEnableTrading(true)
+  setTradeBalanceETH(100)
+  setProfitTarget(150)
+  Start Trading
 
-8. Penghentian Darurat
-Jika diperlukan, gunakan fungsi setEmergencyStop untuk menghentikan bot dalam kondisi darurat.
+  startTrading()
+  Monitoring and Managing the Bot
 
-9. Penarikan Dana
-Gunakan fungsi Withdraw untuk menarik dana dari kontrak.
+Check the bot's balance and status using the provided functions in Remix.
+Stop trading with stopTrading() if necessary.
+Withdraw funds with withdraw().
 
-# Kontribusi
-Silakan kirimkan pull request atau buka issue untuk kontribusi dan perbaikan
+5. Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+6. License
+This project is licensed under the MIT License.
